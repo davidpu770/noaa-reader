@@ -27,7 +27,6 @@ const router = () => {
 		req.params.api = true;
 
 		params = utils.validateParams(req.params);
-
 		let filePath = utils.querifyRequest(params);
 
 		if (FS.checkFileExist(filePath)) {

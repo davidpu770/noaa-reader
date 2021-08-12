@@ -46,6 +46,19 @@ const validateParams = (params) => {
 	}
 	let today = new Date();
 	params.ok = true;
+	if (params.api) {
+		var year = params.date.substring(0, 4);
+		var month = params.date.substring(4, 6);
+		var day = params.date.substring(6, 8);
+
+		params.date = new Date(year, month - 1, day);
+
+		if (new Date(params.date) > today) {
+			params.offset = getOffset(new Date(params.date), today);
+			params.date = dateformat(today, "yyyymmdd");
+			params.dateFormat = dateformat(today, "yyyymmdd");
+		}
+	}
 	if (!params.tryYesterday) {
 		if (new Date(params.date) > today) {
 			try {
@@ -63,7 +76,6 @@ const validateParams = (params) => {
 			}
 		}
 	}
-	console.log("params", params);
 
 	return params;
 };

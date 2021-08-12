@@ -41,7 +41,6 @@ const getForecastFromS3 = async (params, filePath) => {
 				);
 				params.oldDate = params.date;
 				params = utils.tryYesterday(params);
-				console.log(params);
 
 				noaa.getForecast(params, (response) => {
 					let text = `The temperature will be ${response.cel}° on ${response.params.lat}/${response.params.lon} at ${params.oldDate} `;
