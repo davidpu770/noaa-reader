@@ -1,0 +1,73 @@
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+</head>
+
+<body>
+    <div class="container-sm">
+        <div class="d-flex align-items-end bg-light mb-3">
+            <div class="col-12">
+                <div class="form">
+                    <div class="mb-3">
+                        <div class="form-group">
+                            <label for="Latitude " class="form-label">Location</label>
+                            <input type="text" class="form-control" id="location" placeholder="Tel Aviv, israel">
+                            <input style="margin-top: 10px" type="submit" class="btn btn-primary" id="locateLocation"
+                                value="Locate" required>
+                        </div>
+
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="Latitude " class="form-label">Latitude</label>
+                        <input type="text" class="form-control" id="Latitude" placeholder="32.1515">
+                    </div>
+                    <div class="mb-3">
+                        <label for="longitude " class="form-label">Longitude</label>
+                        <input type="text" class="form-control" id="longitude" placeholder="29.1515">
+                    </div>
+                    <div class="mb-3 needs-validation">
+                        <label for="datatimepicker" class="form-label">Date</label>
+                        <input type="text" class="form-control" id="datatimepicker" placeholder="" required>
+                    </div>
+
+                    <input type="submit" class="btn btn-primary" id="submit-form">
+                    <input type="submit" class="btn btn-sucess" id="clear-log" value="Clear Log">
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="d-flex align-items-end bg-light mb-3">
+            <div class="col-12">
+
+                <div class="status" role="alert"></div>
+                <div class="download-log">
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/index.js"></script>
+</body>
