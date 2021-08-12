@@ -21,6 +21,8 @@ const RESTgetForecastFromS3 = async (filePath) => {
 	let s3params = getS3Params(filePath);
 	let file = fs.createWriteStream(config.ForecasFolderName + filePath);
 
+	fileSystem.createFolder(params.dateFormat);
+
 	const stream = s3.getObject(s3params).createReadStream();
 	stream.pipe(file);
 };
