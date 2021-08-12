@@ -70,7 +70,10 @@ const validateParams = (params) => {
 		} else {
 			try {
 				params.dateFormat = dateformat(params.date, "yyyymmdd");
-				params.offset = getPastOffset(params.date);
+
+				if (!params.api) {
+					params.offset = getPastOffset(params.date);
+				}
 			} catch (err) {
 				params.dateFormat = params.date;
 			}
